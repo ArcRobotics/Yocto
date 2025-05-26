@@ -1,6 +1,7 @@
 import can
 import datetime
 import ctypes
+import logos
 
 # Define the log file name
 log_file = "can0_log.cpp"
@@ -8,17 +9,7 @@ log_file = "can0_log.cpp"
 # Create a Bus instance to listen on the 'can0' interface
 bus = can.interface.Bus(channel='can0', bustype='socketcan')
 
-print("""
-  ____    _    _   _   ____  _   _ ____
- / ___|  / \  | \ | | | __ )| | | / ___|
-| |     / _ \ |  \| | |  _ \| | | \___
-| |___ / ___ \| |\  | | |_) | |_| |___) |
- \____/_/  _\_\_|_\_|_|____/_\___/|____/
-/ ___|| \ | (_)  ___|  ___| ____|  _  |
-\___ \|  \| | | |_  | |_  |  _| | |_) |
- ___) | |\  | |  _| |  _| | |___|  _ <
-|____/|_| \_|_|_|   |_|   |_____|_| \_|
-""")
+logos.pirnt_logo()
 
 Number_of_nodes = int(input('Please enter the number of nodes:'))
 
@@ -77,6 +68,7 @@ with open(log_file, 'a') as f:
 					current_time = datetime.datetime.now()
 					time_diff = (current_time - previous_sync_time).total_seconds() * 1000.0
 					previous_sync_time = current_time
+					counter = counter + 1
 					if(time_diff > 1):
 						# print(f"Delta_Time: {time_diff:.2f} ms")
 						f.write(f"SyncTime = {time_diff}\n")
