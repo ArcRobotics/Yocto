@@ -178,5 +178,46 @@ export PATH=$HOME/.local/bin:$PATH
 eval "$(oh-my-posh init bash)"
 
 
-eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/quick-term2.omp.json)"
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/my-quick-term.omp.json.json)" || \
+ echo "Please download https://github.com/ArcRobotics/Yocto/tree/master/Helper%20tools/My%20posh%20themes "
 
+#Function to display the root file system and explain their purpose
+rootfs()
+{
+# First level (root directories)
+echo "                                RootFS"
+echo "                                  |"
+echo " ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐"
+echo " |    |    |    |    |    |    |    |    |    |    |    |    |    |    |"
+echo "bin  etc  usr  var  home root boot tmp  sbin opt  sys  proc  dev  run srv"
+echo "           │    │                                  │"
+echo "        ┌──┴──┐ └─────┬────┬───────┐               │"
+echo "        |     |       |    |       |               │"
+echo "       usr    var     log  spool  cache          class"
+echo "                                                   │"
+echo "                                 ┌─────────────────┴────────────────┐"
+echo "                                 |        |       |       |         |"
+echo "                                gpio     i2c     net     usb    power_supply"
+echo "Descriptions:"
+echo "bin   - Essential command binaries(e.g., ls, cp, mv)"
+echo "etc   - System configuration files"
+echo "usr   - User programs and libraries"
+echo "  ├── bin   - Non-essential user binaries"
+echo "  ├── lib   - Libraries for /usr binaries"
+echo "  └── share - Architecture-independent data"
+echo "var   - Variable files like logs and spool"
+echo "  ├── log   - Log files"
+echo "  ├── spool - Print and mail spool directories"
+echo "  └── cache - Cached data"
+echo "home  - User home directories"
+echo "root  - Root user home directory"
+echo "boot  - Bootloader files(e.g., kernel, initrd)"
+echo "tmp   - Temporary files, including some runtime files like sockets or PID files"
+echo "sbin  - System binaries(e.g., fsck, reboot)."
+echo "opt   - Optional add-on software"
+echo "sys   - Kernel and system device info (virtual filesystem,Class -> gpio , pcie , i2c...etc)"
+echo "proc  - Process and kernel info (virtual filesystem)"
+echo "dev   - Device files(e.g., /dev/sda, /dev/null)"
+echo "run   - Runtime variable data (volatile)"
+echo "srv   - Data for services provided by the system (e.g., web, ftp)"
+}
