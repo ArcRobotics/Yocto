@@ -1,8 +1,12 @@
 #!/bin/bash
 
 if [ "$1" != "sudo" ]; then
-	echo "Please run this script with sudo:"
+	echo "Please run this script with sudo."
+else
+	return 0
+fi
 
+#remove the default bashrc
 rm ~/.bashrc
 
 apt install fzf -y
@@ -180,8 +184,20 @@ stop() {
     fi
 }
 
+#Task managers in linux
 alias nerd='btop'
 alias nerd++='htop'
+
+#open helper manual for any command
+alias help='man'
+
+#Display size  occupied by each file / delete file / spwan at the current directory
+alias space='ncdu --color dark'
+
+#Display size occupied by each mounted disk and other info
+alias disk='duf'
+
+alias exe='chmod +x'
 
 #To combine nano with fzf add the following to bashrc
 
@@ -191,6 +207,12 @@ nanox() {
 	file=$(fzf --preview='cat {}')   # Start fzf and store selected file
 	[[ -n "$file" ]] && nano "$file"  # Open selected file in nano if one is selected
 	}
+
+export PATH=$HOME/.local/bin:$PATH
+eval "$(oh-my-posh init bash)"
+
+
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/quick-term2.omp.json)"
 EOF
 
 echo ".bashrc created successfully!"
