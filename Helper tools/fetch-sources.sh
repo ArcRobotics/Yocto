@@ -7,11 +7,13 @@
 POKY_REPO="git@github.com:yoctoproject/poky.git"
 META_OPENEMBEDDED_REPO="git@github.com:openembedded/meta-openembedded.git"
 META_RASPBERRYPI_REPO="git@github.com:agherzan/meta-raspberrypi.git"
+META_QT5_REPO="git@github.com:meta-qt5/meta-qt5.git"
 
 # Define branches (change if needed)
 POKY_BRANCH="scarthgap"  # Set to the desired Yocto release branch
 META_OPENEMBEDDED_BRANCH="scarthgap"
 META_RASPBERRYPI_BRANCH="scarthgap"
+META_QT5_BRANCH="scarthgap"
 
 # Directory where the layers will be cloned
 YOCTO_DIR="sources"
@@ -35,6 +37,9 @@ git clone -b "$META_OPENEMBEDDED_BRANCH" "$META_OPENEMBEDDED_REPO" || { echo "Fa
 
 echo "Cloning meta-raspberrypi..."
 git clone -b "$META_RASPBERRYPI_BRANCH" "$META_RASPBERRYPI_REPO" || { echo "Failed to clone meta-raspberrypi"; exit 1; }
+
+echo "Cloning meta-qt5..."
+git clone -b "$META_QT5_BRANCH" "$META_QT5_REPO" || { echo "Failed to clone meta-QT5"; exit 1; }
 
 # Display success message
 echo "Repositories cloned successfully into the $YOCTO_DIR directory."

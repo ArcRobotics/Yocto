@@ -36,7 +36,7 @@ fi
 input="$1"
 
 echo "Fetching..."
-scp root@192.168.1.26:/root/${input}.data .
+scp root@192.168.1.100:/root/${input}.data .
 
 echo "Plotting data and exporting it as ${input}_histogram.png image"
 # Start gnuplot and feed it commands
