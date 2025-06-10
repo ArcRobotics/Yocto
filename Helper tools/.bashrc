@@ -178,7 +178,7 @@ export PATH=$HOME/.local/bin:$PATH
 eval "$(oh-my-posh init bash)"
 
 
-eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/my-quick-term.omp.json.json)" || \
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/my-quick-term.omp.json)" || \
  echo "Please download https://github.com/ArcRobotics/Yocto/tree/master/Helper%20tools/My%20posh%20themes "
 
 #Function to display the root file system and explain their purpose
