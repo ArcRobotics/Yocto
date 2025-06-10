@@ -22,7 +22,9 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 echo " Installing my theme"
 
 mkdir -p ~/.poshthemes
-wget -P ~/.poshthemes "https://github.com/ArcRobotics/Yocto/blob/master/Helper%20tools/My%20posh%20themes/my-quick-term.omp.json" --quiet
+
+#silly we mus get the raw files on a public repo
+wget -P ~/.poshthemes "https://raw.githubusercontent.com/ArcRobotics/Yocto/refs/heads/master/Helper%20tools/My%20posh%20themes/my-quick-term.omp.json" --quiet
 
 echo "My posh is ready to use"
 
@@ -34,7 +36,7 @@ echo "My posh is ready to use"
 rm ~/.bashrc
 
 #Downlaod the new bashrc
-wget "https://github.com/ArcRobotics/Yocto/blob/master/Helper%20tools/.bashrc" --quiet
+wget "https://raw.githubusercontent.com/ArcRobotics/Yocto/refs/heads/master/Helper%20tools/.bashrc" --quiet
 
 echo ".bashrc created successfully!"
 
