@@ -21,7 +21,12 @@ cat << "EOF"
      |_|  |_|        |_||
       \_\  \_\        \_\\
 EOF
+
+BASHDIR=$(pwd)
+
 cd
+
+echo "Installing dependencies..."
 
 sudo apt install -y fzf  htop  btop  tree  git  duf  ncdu  unzip curl
 sudo apt install -y bzip2 chrpath cpp diffstat g++ gcc lz4 make zstd rpcsvc-proto
@@ -56,7 +61,7 @@ oh-my-posh font install FiraCode
 # wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip
 # rm themes.zip
 
-cd
+mv .poshthemes/my-quick-term.omp.json ~/.poshthemes
 
 #remove the default bashrc
 rm .bashrc
@@ -78,4 +83,4 @@ ssh-keygen -t rsa && cat ~/.ssh/id_rsa.pub
 
 echo "SSH key created successfully! Please add it to your github account"
 
-rm init_linux_system.sh
+rm $BASHDIR/init_linux_system.sh
