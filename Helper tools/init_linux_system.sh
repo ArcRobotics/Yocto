@@ -55,6 +55,8 @@ oh-my-posh font install FiraCode
 # wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip
 # rm themes.zip
 
+cd
+
 #remove the default bashrc
 rm .bashrc
 
@@ -66,6 +68,8 @@ echo ".bashrc created successfully!"
 
 sudo locale-gen en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8
+
+cd
 
 source .bashrc
 
