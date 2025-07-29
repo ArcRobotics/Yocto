@@ -21,6 +21,7 @@ cat << "EOF"
      |_|  |_|        |_||
       \_\  \_\        \_\\
 EOF
+cd
 
 sudo apt install -y fzf  htop  btop  tree  git  duf  ncdu  unzip curl
 sudo apt install -y bzip2 chrpath cpp diffstat g++ gcc lz4 make zstd rpcsvc-proto
