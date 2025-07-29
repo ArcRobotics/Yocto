@@ -14,7 +14,7 @@ cat << "EOF"
   // \       )         V    / \____/
  //   \     /        (     /    \___________________________________________
 //     \   /_________|  |_/     | 										    |
-      /  /\   /     |  ||       | I will spice you linux machine BRO!       |
+      /  /\   /     |  ||       | I will spice your linux machine BRO!       |
      /  / /  /      \  ||       ---------------------------------------------
      | |  | |        | ||
      | |  | |        | ||
@@ -22,13 +22,15 @@ cat << "EOF"
       \_\  \_\        \_\\
 EOF
 
+sudo apt install -y fzf  htop  btop  tree  git  duf  ncdu  unzip curl
+sudo apt install -y bzip2 chrpath cpp diffstat g++ gcc lz4 make zstd rpcsvc-proto
+
 #configure git
 read -p "Enter git name: " name
 git config --global user.name "$name"
 
 read -p "Enter git email: " email
 git config --global user.email "$email"
-
 
 #install oh-my-posh to spice the terminal
 export PATH=$PATH:$HOME/.local/bin
@@ -47,6 +49,8 @@ wget -P .poshthemes "https://raw.githubusercontent.com/ArcRobotics/Yocto/refs/he
 
 echo "My posh is ready to use"
 
+oh-my-posh font install FiraCode
+
 #Uncomment this to get more themes
 # wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip
 # rm themes.zip
@@ -59,8 +63,6 @@ wget -P . "https://raw.githubusercontent.com/ArcRobotics/Yocto/refs/heads/master
 
 echo ".bashrc created successfully!"
 
-sudo apt install -y fzf  htop  btop  tree  git  duf  ncdu  unzip
-sudo apt install -y bzip2 chrpath cpp diffstat g++ gcc lz4 make zstd rpcsvc-proto
 
 sudo locale-gen en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8
